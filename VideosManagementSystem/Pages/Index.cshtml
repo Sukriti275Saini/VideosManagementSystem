@@ -1,0 +1,88 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "VidzzLease";
+}
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Pangolin&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet" />
+</head>
+
+<!-- <div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div> -->
+
+<div class="conainer-fluid main-banner">
+    <div class="container">
+        <div class="row">
+            <div class="banner-text col-6">
+                <h1>Find your choice</h1>
+                <h4>and</h4>
+                <h2>Lease It / Rent It</h2>
+                <p>
+                    Watch It At Your <span>Own Time</span>, <span>Own Place</span>,
+                    With Your <span>Favourite Person</span> or <span>Alone</span>.
+                </p>
+                <h3>Post and Read Blogs</h3>
+                <h5>Not a User....??? Hurry and <a asp-page="/User/NewUser" role="button"><span>Sign Up</span></a> Now!!..</h5>
+            </div>
+            <div class="login-form-div col-6">
+                <div class="login-form">
+                    <div class="login-text text-center col-12">
+                        <h3>Already a User?</h3>
+                        <h4>Sign In Here:</h4>
+                    </div>
+                    <form class="main-form" method="post">
+                        <div class="row">
+                            <div class="col-4">
+                                <label>Username :</label>
+                            </div>
+                            <div class="col-8">
+                                <input type="text" autocomplete="off" />
+                            </div>
+                            <div class="col-12">
+                                <span></span>
+                            </div>
+
+                            <div class="col-4">
+                                <label>Password :</label>
+                            </div>
+                            <div class="col-8">
+                                <input type="password" />
+                            </div>
+                            <div class="col-12">
+                                <span></span>
+                            </div>
+
+                            <div class="col-12 text-center">
+                                <button class="btn login-btn" type="submit">Login</button>
+                            </div>
+
+                            <div class="signup-text text-center col-12">
+                                <h5>Or <a asp-page="/User/NewUser" role="button"><span>SignUp</span></a> Here!</h5>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid main-quote">
+    <div class="container">
+        <div class="row">
+            <div class="quote-img col-3">
+                <img src="~/Images/quoteimg.jpg" alt="image" />
+            </div>
+            <div class="quote-text col-9">
+                <h2><i class="fas fa-quote-left"></i> Smile, because it confuses people. Smile, 
+                    because it’s easier than explaining what is killing you inside. <i class="fas fa-quote-right"></i> 
+                    <span>- The Joker</span>
+                </h2>
+            </div>
+        </div>
+    </div>
+</div>

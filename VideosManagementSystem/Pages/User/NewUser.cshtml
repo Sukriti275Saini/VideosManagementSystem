@@ -1,0 +1,103 @@
+﻿@page
+@model VideosManagementSystem.Pages.User.NewUserModel
+@{
+    ViewData["Title"] = "NewUser";
+}
+
+<div class="container-fluid newuser-back">
+    <div class="container">
+        <div class="col-12 text-center newuser-text">
+            <h2>Fill in the Details below :</h2>
+        </div>
+
+        <div class="signup-back">
+            <form class="signup-form col-6 mx-auto" enctype="multipart/form-data" method="post">
+                <div class="row">
+                    <div class="col-5">
+                        <label>Full Name :</label>
+                    </div>
+                    <div class="col-7">
+                        <input asp-for="UserDetails.FullName" autocomplete="off" />
+                        <span class="text-danger" asp-validation-for="UserDetails.FullName"></span>
+                    </div>
+
+                    <div class="col-5">
+                        <label>Username :</label>
+                    </div>
+                    <div class="col-7">
+                        <input asp-for="UserDetails.UserName" autocomplete="off" />
+                        <span class="text-danger" asp-validation-for="UserDetails.UserName"></span>
+                    </div>
+
+                    <div class="col-5">
+                        <label>Profile Picture :</label>
+                    </div>
+                    <div class="col-7 pro-pic">
+                        <input type="file" asp-for="UploadPicture" accept="image/*" />
+                        <!--<input class="upload-btn" value="Upload" asp-for="UploadPicture" />-->
+                        <span class="text-danger" asp-validation-for="UserDetails.ProfilePicture"></span>
+                    </div>
+
+                    <div class="col-5">
+                        <label>E-mail :</label>
+                    </div>
+                    <div class="col-7">
+                        <input asp-for="UserDetails.Email" autocomplete="off" />
+                        <span class="text-danger" asp-validation-for="UserDetails.Email"></span>
+                    </div>
+
+                    <div class="col-5">
+                        <label>Date Of Birth :</label>
+                    </div>
+                    <div class="col-7">
+                        <input asp-for="UserDetails.DateOfBirth" autocomplete="off" />
+                        <span class="text-danger" asp-validation-for="UserDetails.DateOfBirth"></span>
+                    </div>
+
+                    <div class="col-5">
+                        <label>Password :</label>
+                    </div>
+                    <div class="col-7">
+                        <input type="password" asp-for="UserDetails.Password" autocomplete="off" />
+                        <span class="text-danger" asp-validation-for="UserDetails.Password"></span>
+                    </div>
+
+                    <div class="col-5">
+                        <label>Confirm Password :</label>
+                    </div>
+                    <div class="col-7">
+                        <input type="password" asp-for="UserDetails.ConfirmPassword" />
+                        <span class="text-danger" asp-validation-for="UserDetails.ConfirmPassword"></span>
+                    </div>
+
+                    <div class="col-5">
+                        <label>Phone No. :</label>
+                    </div>
+                    <div class="col-7">
+                        <input type="text" asp-for="UserDetails.PhoneNo" autocomplete="off" />
+                        <span class="text-danger" asp-validation-for="UserDetails.PhoneNo"></span>
+                    </div>
+
+                    <div class="col-5">
+                        <label>Address :</label>
+                    </div>
+                    <div class="col-7">
+                        <input asp-for="UserDetails.Address" autocomplete="off" />
+                        <span class="text-danger" asp-validation-for="UserDetails.Address"></span>
+                    </div>
+
+                    <div class="col-12 text-center">
+                        <button class="btn signup-btn" type="submit">Sign Up</button>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}
