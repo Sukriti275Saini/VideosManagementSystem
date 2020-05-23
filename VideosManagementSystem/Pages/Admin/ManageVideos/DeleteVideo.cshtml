@@ -1,0 +1,48 @@
+﻿@page "{vidId:int}"
+@model VideosManagementSystem.Pages.Admin.ManageVideos.DeleteVideoModel
+@{
+    ViewData["Title"] = "DeleteVideo";
+    Layout = "~/Pages/Admin/_AdminLayout.cshtml";
+}
+
+<div class="container">
+    <h2 class="confirmdelete-text">Delete!</h2>
+
+    <div class="alert alert-danger">
+        Are you sure you want to delete @Model.confirmvideo.VideoName?
+    </div>
+
+    <div class="col-12 usrdelete-details">
+        <div class="row">
+            <div class="col-3 label">Video Id :</div>
+            <div class="col-9">@Model.confirmvideo.VideoId</div>
+
+            <div class="col-3 label">Year of Release :</div>
+            <div class="col-9">@Model.confirmvideo.YearOfRelease</div>
+
+            <div class="col-3 label">Language :</div>
+            <div class="col-9">@Model.confirmvideo.Language</div>
+
+            <div class="col-3 label">Director :</div>
+            <div class="col-9">@Model.confirmvideo.Director</div>
+
+            <div class="col-3 label">Actor :</div>
+            <div class="col-9">@Model.confirmvideo.Actor</div>
+
+            <div class="col-3 label">Description :</div>
+            <div class="col-9">@Model.confirmvideo.Description</div>
+
+            <div class="col-3 label">Number Of Copies :</div>
+            <div class="col-9">@Model.confirmvideo.NoOfCopies</div>
+
+            <div class="col-3 label">Lease Amount :</div>
+            <div class="col-9">@Model.confirmvideo.LeaseAmount</div>
+        </div>
+    </div>
+
+    <form method="post" class="confirm-buttons">
+        <button type="submit" class="btn btn-danger">Yes</button>
+        <a class="btn btn-light" asp-page="./VideosList">Cancel</a>
+    </form>
+</div>
+

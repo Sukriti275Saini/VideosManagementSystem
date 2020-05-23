@@ -1,0 +1,67 @@
+﻿@page
+@model VideosManagementSystem.Pages.Admin.ManageVideos.VideosListModel
+@{
+    ViewData["Title"] = "VideosList";
+    Layout = "~/Pages/Admin/_AdminLayout.cshtml";
+}
+
+<div class="container">
+
+    <p class="searchuser">Type a username to search</p>
+    <form method="get">
+        <div class="form-group">
+            <div class="input-group search-section">
+                <input type="search" class="form-control search-input" asp-for="searchVideo" autocomplete="off" />
+                <span class="input-group-btn">
+                    <button class="btn" type="submit">
+                        <i class="fas fa-search search-logo"></i>
+                    </button>
+                </span>
+            </div>
+        </div>
+    </form>
+
+    <div class="col-12">
+        <h1 class="allusers-heading">All Videos :</h1>
+        <a role="button" class="btn" asp-page="./AddVideo">Add New Video</a>
+    </div>
+
+    <table class="table table-responsive table-striped table-hover allusers-table">
+        <thead class="thead-dark">
+            <tr>
+                <th>Video Id</th>
+                <th>Cover Image</th>
+                <th>Name</th>
+                <th>Year of Release</th>
+                <th>Language</th>
+                <th>Director</th>
+                <th>Actor</th>
+                <th>Number of Copies</th>
+                <th>Lease Amount</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var vid in Model.allVideos)
+            {
+            <tr>
+                <td>@vid.VideoId</td>
+                <td>
+                    <img class="admin-proimg" src="~/Images/movies/@vid.VideoImage" />
+                </td>
+                <td>@vid.VideoName</td>
+                <td>@vid.YearOfRelease</td>
+                <td>@vid.Language</td>
+                <td>@vid.Director</td>
+                <td>@vid.Actor</td>
+                <td>@vid.NoOfCopies</td>
+                <td>@vid.LeaseAmount</td>
+                <td>
+                    <a class="btn delete-btn" asp-page="./DeleteVideo" asp-route-vidId="@vid.VideoId">Delete Video</a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

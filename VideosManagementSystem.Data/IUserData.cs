@@ -9,9 +9,15 @@ namespace VideosManagementSystem.Data
     {
         public IEnumerable<Users> GetAllUsers();
 
-        Users GetUserByName(string username);
+        public IEnumerable<Users> GetUserByName(string username);
+
+        Users GetByUserName(string username);
 
         string Add(Users newUser);
+
+        string LoginUser(string username, string Password);
+
+        string Delete(string username);
 
         public int Commit();
     }

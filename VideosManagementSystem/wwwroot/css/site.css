@@ -354,3 +354,40 @@ body {
     border: 1px solid white;
     background: rgba(193, 0, 0, 0.60);
 }
+
+
+/*Dashboard*/
+.maindashboard{
+    margin-top: 80px;
+    margin-bottom: 20px;
+} 
+.writeblog-btn{
+    padding: 5px 15px;
+}
+
+
+/*All videos*/
+.allvideos {
+    margin-top: 80px;
+    margin-bottom: 20px;
+}
+.heading-allvids{
+    font-family: 'Comic Sans MS';
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.single-video{
+    min-height: 300px;
+    margin-bottom: 20px;
+}
+
+/*Video Details Page*/
+.video-details{
+    margin-top: 80px;
+    margin-bottom: 20px;
+}
+
+/*Write Blog Page*/
+.writeblog-page{
+    margin-top: 80px;
+}

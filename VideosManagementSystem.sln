@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VideosManagementSystem", "V
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VideosManagementSystem.Core", "VideosManagementSystem.Core\VideosManagementSystem.Core.csproj", "{D470AB7B-5D16-4A96-814C-6346E384499C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideosManagementSystem.Data", "VideosManagementSystem.Data\VideosManagementSystem.Data.csproj", "{CA9ECE45-FB86-44D9-988C-E8ABF52E8FED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VideosManagementSystem.Data", "VideosManagementSystem.Data\VideosManagementSystem.Data.csproj", "{CA9ECE45-FB86-44D9-988C-E8ABF52E8FED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

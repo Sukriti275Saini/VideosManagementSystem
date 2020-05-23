@@ -16,8 +16,7 @@ namespace VideosManagementSystem.Core
         [Required(ErrorMessage = "Please enter your full name")]
         [StringLength(30, ErrorMessage = "Minimum 3 and maximum 30 characters only", MinimumLength = 3)]
         public string FullName { get; set; }
-
-        [Required(ErrorMessage = "Please choose a picture for your profile")]
+        
         public string ProfilePicture { get; set; }
 
         [Required]
@@ -25,11 +24,11 @@ namespace VideosManagementSystem.Core
         [DataType(DataType.Date)]
         public DateTime DateOfBirth { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Enter your email address")]
         [RegularExpression(@"^[a-z0-9._]+@[a-z0-9.-]+.[a-z]{2,4}$", ErrorMessage = "Please enter a valid email format")]
         public string Email { get; set; }
 
-        [Required(ErrorMessage = "Please enter sajcgvdskhvfkhcagdbvhj")]
+        [Required(ErrorMessage = "Please enter a password")]
         [StringLength(30, ErrorMessage = "Your passsword should be atleast 8 characters long", MinimumLength = 8)]
         public string Password { get; set; }
 

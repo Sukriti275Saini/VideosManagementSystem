@@ -41,7 +41,11 @@ namespace VideosManagementSystem
             });
 
             services.AddRazorPages();
+            services.AddControllers();
+
             services.AddScoped<IUserData, InMemoryUserData>();
+            services.AddScoped<IVideoData, InMemoryVideoData>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

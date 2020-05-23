@@ -23,14 +23,20 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-page="/Index">Home</a>
+                            <a class="nav-link" asp-page="/Index">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-page="/Index">Blogs</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-page="/Index">Videos</a>
+                            <a class="nav-link" asp-area="" asp-page="/User/AllVideos">Videos</a>
                         </li>
+                        @if(!string.IsNullOrEmpty(Context.Session.GetString("username")))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" asp-page="User/Dashboard" asp-route-urlname="@Context.Session.GetString("username")">Dashboard</a>
+                            </li>
+                        }
                     </ul>
                 </div>
             </div>

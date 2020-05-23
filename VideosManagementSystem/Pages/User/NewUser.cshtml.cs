@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -34,7 +35,46 @@ namespace VideosManagementSystem.Pages.User
             UserDetails = new Users();
         }
 
-        public async Task<IActionResult> OnPost(IFormFile UploadPicture)
+        public IActionResult OnPost(Users UserDetails)
+        {
+            if (UploadPicture != null)
+            {
+                UserDetails.ProfilePicture = UploadedProPicture(UploadPicture);
+            }
+
+            if (ModelState.IsValid)
+            {
+                Message = userSignup.Add(UserDetails);
+                if (Message == "Added")
+                {
+                    userSignup.Commit();
+                    HttpContext.Session.SetString("username", UserDetails.UserName);
+                    return RedirectToPage("Dashboard", new { urlname = UserDetails.UserName });
+                }
+            }
+            return Page();
+        }
+
+       
+        private string UploadedProPicture(IFormFile UploadPicture)
+        {
+            string uniqueFileName = null;
+
+            if (UploadPicture != null)
+            {
+                var file = Path.Combine(hostEnvironment.WebRootPath, "Images/users");
+                uniqueFileName = UserDetails.UserName + "_" + UploadPicture.FileName;
+                string filePath = Path.Combine(file, uniqueFileName);
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                {
+                    UploadPicture.CopyTo(fileStream);
+                }
+            }
+            return uniqueFileName;
+        }
+
+
+        /*public async Task<IActionResult> OnPost(Users UserDetails)
         {
             var file = Path.Combine(hostEnvironment.WebRootPath, "Images", UserDetails.UserName + "_" + UploadPicture.FileName);
             using (var filestream = new FileStream(file, FileMode.Create))
@@ -49,13 +89,13 @@ namespace VideosManagementSystem.Pages.User
                 if (Message == "Added")
                 {
                     userSignup.Commit();
-                    HttpContext.Session.SetString("username", UserDetails.UserName);
-                    return RedirectToPage("/User/Dashboard", new { user = UserDetails.UserName });
+                    return RedirectToPage("/Index");
+                    //HttpContext.Session.SetString("username", UserDetails.UserName);
+                    //return RedirectToPage("/User/Dashboard", new { user = UserDetails.UserName });
                 }
             }
             return Page();
-        }
-
+        }*/
 
         /*public async Task OnPostAsync()
         {

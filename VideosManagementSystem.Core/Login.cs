@@ -7,10 +7,10 @@ namespace VideosManagementSystem.Core
 {
     public class Login
     {
-        [Required]
+        [Required(ErrorMessage = "Enter an existing username")]
         public string UserName { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Enter a valid Password")]
         public string Password { get; set; }
     }
 }

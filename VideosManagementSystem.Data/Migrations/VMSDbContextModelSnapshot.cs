@@ -107,7 +107,6 @@ namespace VideosManagementSystem.Data.Migrations
                         .HasColumnType("bigint");
 
                     b.Property<string>("ProfilePicture")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("UserName");
@@ -131,17 +130,17 @@ namespace VideosManagementSystem.Data.Migrations
                     b.Property<DateTime>("ReturnDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("UserName1")
+                    b.Property<string>("UsersUserName")
                         .HasColumnType("nvarchar(20)");
 
-                    b.Property<int?>("VideoNameVideoId")
+                    b.Property<int?>("VideosVideoId")
                         .HasColumnType("int");
 
                     b.HasKey("RecordId");
 
-                    b.HasIndex("UserName1");
+                    b.HasIndex("UsersUserName");
 
-                    b.HasIndex("VideoNameVideoId");
+                    b.HasIndex("VideosVideoId");
 
                     b.ToTable("Records");
                 });
@@ -154,16 +153,24 @@ namespace VideosManagementSystem.Data.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Actor")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(30)")
+                        .HasMaxLength(30);
 
                     b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(500)")
+                        .HasMaxLength(500);
 
                     b.Property<string>("Director")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(30)")
+                        .HasMaxLength(30);
 
                     b.Property<string>("Language")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(40)")
+                        .HasMaxLength(40);
 
                     b.Property<int>("LeaseAmount")
                         .HasColumnType("int");
@@ -171,9 +178,13 @@ namespace VideosManagementSystem.Data.Migrations
                     b.Property<int>("NoOfCopies")
                         .HasColumnType("int");
 
+                    b.Property<string>("VideoImage")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("VideoName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
 
                     b.Property<int>("YearOfRelease")
                         .HasColumnType("int");
@@ -192,13 +203,13 @@ namespace VideosManagementSystem.Data.Migrations
 
             modelBuilder.Entity("VideosManagementSystem.Core.UsersVideoRecord", b =>
                 {
-                    b.HasOne("VideosManagementSystem.Core.Users", "UserName")
+                    b.HasOne("VideosManagementSystem.Core.Users", "Users")
                         .WithMany()
-                        .HasForeignKey("UserName1");
+                        .HasForeignKey("UsersUserName");
 
-                    b.HasOne("VideosManagementSystem.Core.Videos", "VideoName")
+                    b.HasOne("VideosManagementSystem.Core.Videos", "Videos")
                         .WithMany()
-                        .HasForeignKey("VideoNameVideoId");
+                        .HasForeignKey("VideosVideoId");
                 });
 #pragma warning restore 612, 618
         }

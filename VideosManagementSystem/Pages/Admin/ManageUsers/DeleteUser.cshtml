@@ -1,0 +1,38 @@
+﻿@page "{username}"
+@model VideosManagementSystem.Pages.Admin.ManageUsers.DeleteUserModel
+@{
+    ViewData["Title"] = "DeleteUser";
+    Layout = "~/Pages/Admin/_AdminLayout.cshtml";
+}
+
+<div class="container">
+    <h2 class="confirmdelete-text">Delete!</h2>
+
+    <div class="alert alert-danger">
+        Are you sure you want to delete @Model.confirmuser.UserName?
+    </div>
+
+    <div class="col-12 usrdelete-details">
+        <div class="row">
+            <div class="col-2 label">Full Name :</div>
+            <div class="col-10">@Model.confirmuser.FullName</div>
+
+            <div class="col-2 label">Date of Birth :</div>
+            <div class="col-10">@Model.confirmuser.DateOfBirth</div>
+
+            <div class="col-2 label">Email :</div>
+            <div class="col-10">@Model.confirmuser.Email</div>
+
+            <div class="col-2 label">Phone No. :</div>
+            <div class="col-10">@Model.confirmuser.PhoneNo</div>
+
+            <div class="col-2 label">Address :</div>
+            <div class="col-10">@Model.confirmuser.Address</div>
+        </div>
+    </div>
+
+    <form method="post" class="confirm-buttons">
+        <button type="submit" class="btn btn-danger">Yes</button>
+        <a asp-page="UsersList" class="btn btn-light">Cancel</a>
+    </form>
+</div>

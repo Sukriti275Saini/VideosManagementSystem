@@ -1,0 +1,60 @@
+﻿@page
+@model VideosManagementSystem.Pages.Admin.ManageUsers.UsersListModel
+@{
+    ViewData["Title"] = "UsersList";
+    Layout = "~/Pages/Admin/_AdminLayout.cshtml";
+}
+
+<div class="container">
+
+    <p class="searchuser">Type a username to search</p>
+    <form method="get">
+        <div class="form-group">
+            <div class="input-group search-section">
+                <input type="search" class="form-control search-input" asp-for="searchUser" autocomplete="off" />
+                <span class="input-group-btn">
+                    <button class="btn" type="submit">
+                        <i class="fas fa-search search-logo"></i>
+                    </button>
+                </span>
+            </div>
+        </div>
+    </form>
+ 
+    <h1 class="allusers-heading">All Users :</h1>
+
+    <table class="table table-responsive table-striped table-hover allusers-table">
+        <thead class="thead-dark">
+            <tr>
+                <th>Profile Picture</th>
+                <th>Username</th>
+                <th>Full Name</th>
+                <th>Date of Birth</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Address</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in Model.allUser)
+            {
+                <tr>
+                    <td>
+                        <img class="admin-proimg" src="~/Images/users/@user.ProfilePicture" />
+                    </td>
+                    <td>@user.UserName</td>
+                    <td>@user.FullName</td>
+                    <td>@user.DateOfBirth</td>
+                    <td>@user.Email</td>
+                    <td>@user.PhoneNo</td>
+                    <td>@user.Address</td>
+                    <td>
+                        <a class="btn delete-btn" asp-page="./DeleteUser" asp-route-username="@user.UserName">Delete User</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

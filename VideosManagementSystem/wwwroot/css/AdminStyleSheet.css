@@ -1,0 +1,176 @@
+﻿body { 
+    margin: 0;
+    padding: 0;
+}
+nav {
+    background: black;
+    margin-bottom: 0 !important;
+    box-shadow: 0px 2px 4px white;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+    font-family: 'Kaushan Script', cursive;
+    color: red;
+    font-size: 35px;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 3px white;
+    padding-bottom: 0;
+}
+
+.navbar-brand .navlogo-img {
+    height: 60px;
+    width: 100px;
+    padding-bottom: 20px;
+    filter: drop-shadow(1px 1px 3px white);
+}
+
+ul.navbar-nav {
+    justify-content: flex-end;
+}
+
+a.nav-link {
+    color: white;
+    font-family: 'Comic Sans MS';
+    padding: 8px 8px 0px 42px !important;
+}
+
+.main-body {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+    color: #0366d6;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+
+/*Add Video Styling*/
+.addvideo-form {
+    margin-top: 30px;
+    font-family: 'Comic Sans MS';
+}
+.addvideo-heading{
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+.addvideo-details label{
+    font-weight: 600;
+    margin-bottom: 20px; 
+}
+.addvideo-details input{
+    width: 100%;
+    outline: none;
+    min-height: 35px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+.addvideo-btn{
+    margin-top: 20px;
+    border: 1px solid black;
+    background: rgba(200, 0, 0, 0.80);
+    color: black;
+    font-weight: 600;
+    padding: 3px 10px;
+}
+.addvideo-btn:hover{
+    color: white;
+}
+
+
+
+/*All users/videos styling*/
+
+.allusers-table thead th {
+    font-size: 15px;
+    vertical-align: baseline;
+}
+.allusers-table td {
+    max-width: 200px;
+    word-wrap: break-word;
+    font-size: 13px;
+    font-weight: 500;
+}
+.allusers-heading{
+    font-family: 'Comic Sans MS';
+    font-weight: 600;
+    margin: 20px 0px;
+}
+.searchuser{
+    margin-top: 10px;
+    margin-bottom: 0;
+    font-size: 14px;
+    color: #a80000;
+}
+.search-section{
+    border-bottom: 1px solid black;
+}
+.search-input {
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 2px 12px !important;
+}
+.delete-btn{
+    border: 1px solid black;
+    padding: 5px;
+    font-size: 13px;
+    font-weight: 500;
+    background: rgba(255, 0, 0, 0.30);
+}
+.delete-btn:hover{
+    color: red;
+}
+.admin-proimg{
+    height: 50px;
+    width: 40px;
+}
+
+/*Admin-user/video-delete*/
+.confirmdelete-text{
+    font-family: 'Comic Sans MS';
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.alert-danger{
+    font-family: 'Comic Sans MS';
+    font-weight: 600;
+    padding: 12px 15px;
+}
+.usrdelete-details{
+    margin: 20px 0;
+    font-family: 'Comic Sans MS';
+}
+.usrdelete-details .label{
+    font-weight: 600;
+}
+.confirm-buttons{
+    padding: 15px;
+    font-family: 'Comic Sans MS';
+}
+.confirm-buttons .btn-danger{
+    font-size: 14px;
+    font-weight: 600;
+}
+.confirm-buttons .btn-light {
+    font-size: 14px;
+    border: 1px solid black;
+    font-weight: 600;
+}

@@ -19,12 +19,21 @@ namespace VideosManagementSystem.Data
         public IEnumerable<Users> GetAllUsers()
         {
             var all = from usr in db.User
-                      orderby usr.FullName
+                      orderby usr.UserName
                       select usr;
             return all;
         }
 
-        public Users GetUserByName(string username)
+        IEnumerable<Users> IUserData.GetUserByName(string username)
+        {
+            var usrname = from usr in db.User
+                        where usr.UserName.StartsWith(username) || string.IsNullOrEmpty(username)
+                        orderby usr.UserName
+                        select usr;
+            return usrname;
+        }
+
+        public Users GetByUserName(string username)
         {
             return db.User.Find(username);
         }
@@ -42,9 +51,35 @@ namespace VideosManagementSystem.Data
             return "Added";
         }
 
+        public string LoginUser(string username, string Password)
+        {
+            var checkuser = GetByUserName(username);
+            if (checkuser != null)
+            {
+                var result = checkuser.Password.Equals(Password);
+                if (!result)
+                {
+                    return "Incorrect Password";
+                }
+                return "Successfull";
+            }
+            return "Username not found";
+        }
+
+        public string Delete(string username)
+        {
+            var deluser = GetByUserName(username);
+                if(deluser != null)
+            {
+                db.User.Remove(deluser);
+            }
+            return "User Deleted";
+        }
+
         public int Commit()
         {
             return db.SaveChanges();
         }
+
     }
 }

@@ -1,0 +1,46 @@
+﻿@page
+@model VideosManagementSystem.Pages.User.AllVideosModel
+@{
+    ViewData["Title"] = "AllVideos";
+}
+
+    <div class="container allvideos">
+        <h1 class="heading-allvids">All Videos :</h1>
+
+        <p class="searchuser">Type a video name to search</p>
+        <form method="get">
+            <div class="form-group">
+                <div class="input-group search-section">
+                    <input type="search" class="form-control search-input" asp-for="searchVideo" autocomplete="off" />
+                    <span class="input-group-btn">
+                        <button class="btn" type="submit">
+                            <i class="fas fa-search search-logo"></i>
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </form>
+
+        <div class="row">
+            @foreach (var video in Model.AllVideo)
+            {
+                <div class="col-3">
+                    <div class="single-video card">
+                        <div class="card-header">
+                            <h5>@video.VideoName</h5>
+                        </div>
+                        <div class="card-body">
+                            <img class="img-thumbnail" src="" alt="cover image" />
+                        </div>
+                        <div class="card-footer">
+                            <p>Year : @video.YearOfRelease</p>
+                            <p>Lease Amount: @video.LeaseAmount</p>
+                            <a role="button" class="btn btn-primary btn-block" asp-page="./VideoDetails" asp-route-vId="@video.VideoId">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+
+
+    </div>

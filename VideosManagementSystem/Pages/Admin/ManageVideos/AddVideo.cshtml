@@ -1,0 +1,101 @@
+﻿@page
+@model VideosManagementSystem.Pages.Admin.ManageVideos.AddVideoModel
+@{
+    ViewData["Title"] = "AddVideo";
+    Layout = "~/Pages/Admin/_AdminLayout.cshtml";
+}
+
+<div class="addvideo-form">
+    <div class="container">
+        <div class="col-12 text-center">
+            <h2 class="addvideo-heading">Add New Video :</h2>
+        </div>
+
+        <form class="col-8 mx-auto addvideo-details" enctype="multipart/form-data" method="post">
+            <div class="row">
+                <div class="col-4">
+                    <label>Video Name :</label>
+                </div>
+                <div class="col-8">
+                    <input type="text" asp-for="VideoDetails.VideoName" autocomplete="off" />
+                    <span class="text-danger" asp-validation-for="VideoDetails.VideoName"></span>
+                </div>
+
+                <div class="col-4">
+                    <label>Release Year :</label>
+                </div>
+                <div class="col-8">
+                    <input type="text" asp-for="VideoDetails.YearOfRelease" autocomplete="off" />
+                    <span class="text-danger" asp-validation-for="VideoDetails.YearOfRelease"></span>
+                </div>
+
+                <div class="col-4">
+                    <label>Language :</label>
+                </div>
+                <div class="col-8">
+                    <input type="text" asp-for="VideoDetails.Language" autocomplete="off" />
+                    <span class="text-danger" asp-validation-for="VideoDetails.Language"></span>
+                </div>
+
+                <div class="col-4">
+                    <label>Director :</label>
+                </div>
+                <div class="col-8">
+                    <input type="text" asp-for="VideoDetails.Director" autocomplete="off" />
+                    <span class="text-danger" asp-validation-for="VideoDetails.Director"></span>
+                </div>
+
+                <div class="col-4">
+                    <label>Actor :</label>
+                </div>
+                <div class="col-8">
+                    <input type="text" asp-for="VideoDetails.Actor" autocomplete="off" />
+                    <span class="text-danger" asp-validation-for="VideoDetails.Actor"></span>
+                </div>
+
+                <div class="col-4">
+                    <label>Video Description :</label>
+                </div>
+                <div class="col-8">
+                    <input type="text" asp-for="VideoDetails.Description" autocomplete="off" />
+                    <span class="text-danger" asp-validation-for="VideoDetails.Description"></span>
+                </div>
+
+                <div class="col-4">
+                    <label>No Of Copies Available :</label>
+                </div>
+                <div class="col-8">
+                    <input type="text" asp-for="VideoDetails.NoOfCopies" autocomplete="off" />
+                    <span class="text-danger" asp-validation-for="VideoDetails.NoOfCopies"></span>
+                </div>
+
+                <div class="col-4">
+                    <label>Lease Amount :</label>
+                </div>
+                <div class="col-8">
+                    <input type="text" asp-for="VideoDetails.LeaseAmount" autocomplete="off" />
+                    <span class="text-danger" asp-validation-for="VideoDetails.LeaseAmount"></span>
+                </div>
+
+                <div class="col-4">
+                    <label>Display Image :</label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="VidImage" accept="image/*" />
+                    <span class="text-danger" asp-validation-for="VideoDetails.VideoImage"></span>
+                </div>
+
+                <div class="col-12 text-center">
+                    <button class="btn addvideo-btn" type="submit">Add Video</button>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts{
+    <partial name="Shared/_ValidationScriptsPartial" />
+}

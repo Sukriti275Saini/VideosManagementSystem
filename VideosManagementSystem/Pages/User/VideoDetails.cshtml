@@ -1,0 +1,79 @@
+﻿@page "{vId:int}"
+@model VideosManagementSystem.Pages.User.VideoDetailsModel
+@{
+    ViewData["Title"] = "VideoDetails";
+}
+
+<div class="container">
+    <div class="video-details">
+        <h2>Details of @Model.eachVideo.VideoName</h2>
+
+        <div class="sub-details">
+            <div class="row">
+
+                <div class="col-3">
+                    <h5>Video Id</h5>
+                </div>
+                <div class="col-9">
+                    <h6>@Model.eachVideo.VideoId</h6>
+                </div>
+
+
+                <div class="col-3">
+                    <h5>Release Year</h5>
+                </div>
+                <div class="col-9">
+                    <h6>@Model.eachVideo.YearOfRelease</h6>
+                </div>
+
+                <div class="col-3">
+                    <h5>Language</h5>
+                </div>
+                <div class="col-9">
+                    <h6>@Model.eachVideo.Language</h6>
+                </div>
+
+                <div class="col-3">
+                    <h5>Director</h5>
+                </div>
+                <div class="col-9">
+                    <h6>@Model.eachVideo.Director</h6>
+                </div>
+
+                <div class="col-3">
+                    <h5>Actor</h5>
+                </div>
+                <div class="col-9">
+                    <h6>@Model.eachVideo.Actor</h6>
+                </div>
+
+                <div class="col-3">
+                    <h5>Description</h5>
+                </div>
+                <div class="col-9">
+                    <h6>@Model.eachVideo.Description</h6>
+                </div>
+
+                <div class="col-3">
+                    <h5>Number of Copies Available</h5>
+                </div>
+                <div class="col-9">
+                    <h6>@Model.eachVideo.NoOfCopies</h6>
+                </div>
+
+                <div class="col-3">
+                    <h5>Lease Amount</h5>
+                </div>
+                <div class="col-9">
+                    <h6>@Model.eachVideo.LeaseAmount</h6>
+                </div>
+
+            </div>
+        </div>
+
+        <form action="/" method="post">
+            <input type="submit" class="btn btn-success" value="Add Video To Your Account" />
+        </form>
+
+    </div>
+</div>

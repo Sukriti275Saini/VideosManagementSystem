@@ -10,11 +10,24 @@ namespace VideosManagementSystem.Core
         [Key]
         public int BlogId { get; set; }
 
-        public Users UserName { get; set; }
+        [Required]
+        public Users Users { get; set; }
 
+        [Required]
         public string BlogTitle { get; set; }
 
+        [Required]
         public string BlogDescription { get; set; }
+
+        public string BlogImage { get; set; }
+
+        [Required]
+        public string Blogcontent { get; set; }
+
+        [Required]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/mm/yyyy}")]
+        [DataType(DataType.Date)]
+        public DateTime BlogDate { get; set; }
 
         public int BlogLikes { get; set; }
 

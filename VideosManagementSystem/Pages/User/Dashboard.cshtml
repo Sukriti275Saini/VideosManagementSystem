@@ -1,14 +1,14 @@
-﻿@page "{username}"
+﻿@page "{urlname?}"
 @model VideosManagementSystem.Pages.User.DashboardModel
 @{
     ViewData["Title"] = "Dashboard";
 }
 
-<h1>Dashboard</h1>
-<h1>Dashboard</h1>
-<h1>Dashboard</h1>
-<h1>Dashboard</h1>
-<h1>Dashboard</h1>
-<h1>Dashboard</h1>
-<h1>Dashboard</h1>
 
+<div class="container">
+    <div class="maindashboard">
+        <h1>Dashboard</h1>
+
+        <a class="writeblog-btn btn-primary" role="button" asp-page="./WriteBlog" asp-route-urlname="@Model.getuser">Write a Blog</a>
+    </div>
+</div>
