@@ -15,7 +15,6 @@ namespace VideosManagementSystem.Data
             this.db = db;
         }
 
-
         public IEnumerable<Users> GetAllUsers()
         {
             var all = from usr in db.User

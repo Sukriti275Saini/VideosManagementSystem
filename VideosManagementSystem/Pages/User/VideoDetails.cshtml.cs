@@ -25,9 +25,6 @@ namespace VideosManagementSystem.Pages.User
 
         public Videos eachVideo { get; set; }
         
-        [BindProperty]
-        public int Copies { get; set; }
-        
         public void OnGet(int vId)
         {
             eachVideo = videoData.GetVideosById(vId);
@@ -38,7 +35,7 @@ namespace VideosManagementSystem.Pages.User
             var Username = HttpContext.Session.GetString("username");
             if (string.IsNullOrEmpty(Username))
             {
-                return RedirectToPage("/Users/UserLogin");
+                return RedirectToPage("/Index");
             }
             var newVidRecord = new UsersVideoRecord()
             {
@@ -47,7 +44,7 @@ namespace VideosManagementSystem.Pages.User
                 IssueDate = DateTime.Now,
                 ReturnDate = DateTime.Now.AddDays(14),
                 DueAmount = 0
-            };
+            };  
             bool res = videoRecordData.AddVideoRecord(newVidRecord);
             if (res)
             {

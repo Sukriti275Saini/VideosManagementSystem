@@ -10,8 +10,8 @@ using VideosManagementSystem.Data;
 namespace VideosManagementSystem.Data.Migrations
 {
     [DbContext(typeof(VMSDbContext))]
-    [Migration("20200523113656_recordsedit")]
-    partial class recordsedit
+    [Migration("20200523213849_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -28,24 +28,37 @@ namespace VideosManagementSystem.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<DateTime>("BlogDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("BlogDescription")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("BlogDislikes")
                         .HasColumnType("int");
 
+                    b.Property<string>("BlogImage")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("BlogLikes")
                         .HasColumnType("int");
 
                     b.Property<string>("BlogTitle")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("UserName1")
+                    b.Property<string>("Blogcontent")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UsersUserName")
+                        .IsRequired()
                         .HasColumnType("nvarchar(20)");
 
                     b.HasKey("BlogId");
 
-                    b.HasIndex("UserName1");
+                    b.HasIndex("UsersUserName");
 
                     b.ToTable("Blog");
                 });
@@ -57,19 +70,24 @@ namespace VideosManagementSystem.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("AppReview")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("EmailId")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FirstName")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("LastName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Message")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Suggestions")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("FeedbackId");
@@ -114,6 +132,19 @@ namespace VideosManagementSystem.Data.Migrations
                     b.HasKey("UserName");
 
                     b.ToTable("User");
+
+                    b.HasData(
+                        new
+                        {
+                            UserName = "Sukriti275Saini",
+                            Address = "Pathankot",
+                            DateOfBirth = new DateTime(1995, 5, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "s@s.in",
+                            FullName = "Sukriti Saini",
+                            Password = "Saini123",
+                            PhoneNo = 7418529630L,
+                            ProfilePicture = ""
+                        });
                 });
 
             modelBuilder.Entity("VideosManagementSystem.Core.UsersVideoRecord", b =>
@@ -133,9 +164,10 @@ namespace VideosManagementSystem.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("UsersUserName")
+                        .IsRequired()
                         .HasColumnType("nvarchar(20)");
 
-                    b.Property<int?>("VideosVideoId")
+                    b.Property<int>("VideosVideoId")
                         .HasColumnType("int");
 
                     b.HasKey("RecordId");
@@ -194,24 +226,45 @@ namespace VideosManagementSystem.Data.Migrations
                     b.HasKey("VideoId");
 
                     b.ToTable("Video");
+
+                    b.HasData(
+                        new
+                        {
+                            VideoId = 1,
+                            Actor = "COVID-19",
+                            Description = "MKC Corona ki",
+                            Director = "China",
+                            Language = "Chinese",
+                            LeaseAmount = 200,
+                            NoOfCopies = 2,
+                            VideoImage = "",
+                            VideoName = "Corona ka rona",
+                            YearOfRelease = 2020
+                        });
                 });
 
             modelBuilder.Entity("VideosManagementSystem.Core.Blogs", b =>
                 {
-                    b.HasOne("VideosManagementSystem.Core.Users", "UserName")
+                    b.HasOne("VideosManagementSystem.Core.Users", "Users")
                         .WithMany()
-                        .HasForeignKey("UserName1");
+                        .HasForeignKey("UsersUserName")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("VideosManagementSystem.Core.UsersVideoRecord", b =>
                 {
                     b.HasOne("VideosManagementSystem.Core.Users", "Users")
                         .WithMany()
-                        .HasForeignKey("UsersUserName");
+                        .HasForeignKey("UsersUserName")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("VideosManagementSystem.Core.Videos", "Videos")
                         .WithMany()
-                        .HasForeignKey("VideosVideoId");
+                        .HasForeignKey("VideosVideoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

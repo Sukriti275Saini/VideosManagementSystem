@@ -1,4 +1,4 @@
-﻿@page
+﻿@page "{urlname}"
 @model VideosManagementSystem.Pages.User.WriteBlogModel
 @{
     ViewData["Title"] = "WriteBlog";
@@ -11,27 +11,28 @@
         <div class="signup-back">
             <form class="signup-form col-6 mx-auto" enctype="multipart/form-data" method="post">
                 <div class="row">
+                    <input type="hidden" asp-for="writeBlog.Users" value="UserData" />
                     <div class="col-5">
                         <label>Blog Title :</label>
                     </div>
                     <div class="col-7">
-                        <input autocomplete="off" />
-                        <span class="text-danger"></span>
+                        <input asp-for="writeBlog.BlogTitle" autocomplete="off" />
+                        <span class="text-danger" asp-validation-for="writeBlog.BlogTitle"></span>
                     </div>
 
                     <div class="col-5">
                         <label>Blog Description :</label>
                     </div>
                     <div class="col-7">
-                        <input autocomplete="off" />
-                        <span class="text-danger"></span>
+                        <input asp-for="writeBlog.BlogDescription" autocomplete="off" />
+                        <span class="text-danger" asp-validation-for="writeBlog.BlogDescription"></span>
                     </div>
 
                     <div class="col-5">
                         <label>Blog Image :</label>
                     </div>
                     <div class="col-7 pro-pic">
-                        <input accept="image/*" />
+                        <input asp-for="BlogPicture" accept="image/*" />
                         <span class="text-danger"></span>
                     </div>
 
@@ -39,16 +40,8 @@
                         <label>Blog Content :</label>
                     </div>
                     <div class="col-7">
-                        <input autocomplete="off" />
-                        <span class="text-danger"></span>
-                    </div>
-
-                    <div class="col-5">
-                        <label>Blog Date :</label>
-                    </div>
-                    <div class="col-7">
-                        <input autocomplete="off" />
-                        <span class="text-danger"></span>
+                        <input asp-for="writeBlog.Blogcontent" autocomplete="off" />
+                        <span class="text-danger" asp-validation-for="writeBlog.Blogcontent"></span>
                     </div>
 
                     <div class="col-12 text-center">

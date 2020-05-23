@@ -10,14 +10,19 @@ namespace VideosManagementSystem.Core
         [Key]
         public int FeedbackId { get; set; }
 
+        [Required]
         public string FirstName { get; set; }
 
+        [Required]
         public string LastName { get; set; }
 
+        [Required]
         public string EmailId { get; set; }
 
-        public string Message { get; set; }
+        [Required]
+        public string AppReview { get; set; }
 
+        [Required]
         public string Suggestions { get; set; }
     }
 }

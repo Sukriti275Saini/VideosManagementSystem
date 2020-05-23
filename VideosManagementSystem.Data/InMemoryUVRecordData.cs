@@ -7,7 +7,7 @@ using VideosManagementSystem.Core;
 
 namespace VideosManagementSystem.Data
 {
-    class InMemoryUVRecordData : IUVRecordData
+    public class InMemoryUVRecordData : IUVRecordData
     {
         private readonly VMSDbContext db;
 
