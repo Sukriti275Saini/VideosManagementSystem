@@ -4,5 +4,36 @@
     ViewData["Title"] = "AllBlogs";
 }
 
-<h1>AllBlogs</h1>
 
+<div class="container-fluid allblogs-back">
+    <div class="container">
+
+        <h1 class="allblogs-heading">Read Blogs</h1>
+
+        <div class="row">
+            @foreach (var b in Model.allblogs)
+            {
+                <div class="col-6">
+                    <div class="single-blog">
+                        <div class="card-header">
+                            <h2>@b.BlogTitle</h2>
+                        </div>
+                        <div class="card-body bdisplay-img">
+                            <img class="blog-displayimg" src="/Images/blogs/@b.BlogImage" alt="blog-img" />
+                        </div>
+                        <div class="card-header blog-desc">
+                            <h4>@b.BlogDescription</h4>
+                        </div>
+                        <div class="card-body blog-desc">
+                            <p>@b.Blogcontent</p>
+                        </div>
+                        <div class="card-footer">
+                            <h6>Blog Posted By : @b.Users.FullName</h6>
+                            <p>Date : @b.BlogDate</p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

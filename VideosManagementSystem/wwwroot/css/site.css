@@ -367,27 +367,172 @@ body {
 
 
 /*All videos*/
-.allvideos {
-    margin-top: 80px;
-    margin-bottom: 20px;
-}
-.heading-allvids{
+.searchvideo {
+    font-size: 13px;
+    margin-bottom: 4px;
+    color: white;
     font-family: 'Comic Sans MS';
+}
+.allvideos {
+    margin-top: 65px;
+    background: url("/Images/videospage.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    width: 100%;
+}
+.search-section {
+    background: rgba(0, 0, 0, 0.60);
+    border-bottom: 1px solid white;
+    border-radius: 5px;
+}
+.search-input {
+    background: transparent !important;
+    color: white !important;
+    outline: none;
+    border: none;
+}
+.search-logo {
+    color: white;
+}
+.heading-allvids h1{
+    padding-top: 20px;
+    font-family: 'Comic Sans MS';
+    color: white;
     font-weight: 600;
     margin-bottom: 20px;
 }
 .single-video{
-    min-height: 300px;
+    min-height: 425px;
     margin-bottom: 20px;
+    background: rgba(0, 0, 0, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.30);
+    box-shadow: 0px 1px 4px rgba(185, 0, 0, 0.60);
+}
+.videoname{
+    color: white;
+    font-family: 'Comic Sans MS';
+    border-bottom: 1px solid rgba(255, 255, 255, 0.50);
+    box-shadow: 0px 0px 3px white;
+}
+.videoname h4{
+    font-size: 23px;
+}
+.videoimg{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+img.img-thumbnail.videomain-img {
+    min-height: 200px;
+    max-height: 200px;
+    width: 100%;
+}
+.videoimgbottom{
+    padding-top: 2px;
+    color: white;
+    font-family: 'Comic Sans MS';
+}
+.videoimgbottom h6{
+    font-weight: 500;
+}
+.videoimgbottom p{
+    font-size: 13px;
+}
+.videoimgbottom a{
+    border: 1px solid white;
+    background: black;
+    color: white;
+}
+.videoimgbottom a:hover{
+    color: #b40000;
 }
 
 /*Video Details Page*/
 .video-details{
-    margin-top: 80px;
-    margin-bottom: 20px;
+    background: url("/Images/videodetails.jpg");
+    background-size: cover;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin-top: 65px;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
+.allvid-details{
+    background: rgba(0, 0, 0, 0.75);
+    padding: 30px;
+    color: white;
+    font-family: 'Comic Sans MS';
+}
+.addvidrecord-btn{
+    margin-top: 20px;
+    border: 1px solid white;
+    background: rgba(255, 255, 255, 0.70);
+    color: black;
+}
+
+
 
 /*Write Blog Page*/
 .writeblog-page{
-    margin-top: 80px;
+    background: url("/Images/blog-form.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    margin-top: 65px;
+}
+.writeblog-heading{
+    color: white;
+    font-family: 'Comic Sans MS';
+    text-align: center;
+    padding: 20px 0;
+    text-shadow: 2px 2px 4px black;
+}
+.postblog-btn{
+    background: rgba(255, 255, 255, 0.95);
+    padding: 5px 10px;
+    color: black;
+    font-weight: 600;
+    border: 1px solid white;
+}
+.postblog-btn:hover{
+    color: #c10000;
+    border: 1px solid #c10000;
+}
+
+
+/*Display All Blogs*/
+.allblogs-back{
+    background: url("/Images/allblogs.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    width: 100%;
+    margin-top: 65px;
+}
+.allblogs-heading{
+    padding-top: 20px;
+    color: white;
+    text-shadow: 2px 2px 4px black;
+    font-family: 'Comic Sans MS';
+}
+.single-blog{
+    background: rgba(255, 255, 255, 0.65);
+    margin: 20px 0;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+.blog-displayimg{
+    max-height: 400px;
+    width: 100%;
+}
+.bdisplay-img{
+    padding: 0;
+}
+.blog-desc{
+    padding-top: 5px;
+    padding-bottom: 5px;
 }

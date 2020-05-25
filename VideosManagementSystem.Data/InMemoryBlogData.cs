@@ -24,6 +24,11 @@ namespace VideosManagementSystem.Data
             return allb;
         }
 
+        public Blogs GetBlogByUser(string username)
+        {
+            return db.Blog.Find(username);
+        }
+
         public IEnumerable<Blogs> GetBlogByUsername(string username)
         {
 

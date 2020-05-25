@@ -5,9 +5,16 @@
 }
 
 
-<div class="container">
-    <div class="maindashboard">
-        <h1>Dashboard</h1>
-        <a class="writeblog-btn btn-primary" role="button" asp-page="./WriteBlog" asp-route-urlname="@Model.getuser.UserName">Write a Blog</a>
+    <div class="container">
+        <div class="maindashboard">
+            <h1>Dashboard</h1>
+            <a class="writeblog-btn btn-primary" role="button" asp-page="./WriteBlog" asp-route-urlname="@Model.getuser.UserName">Write a Blog</a>
+        </div>
+
+        @foreach (var blg in Model.getallblogs)
+        {
+            <div class="container">
+                Blog Name : @blg.BlogTitle
+            </div>
+        }
     </div>
-</div>

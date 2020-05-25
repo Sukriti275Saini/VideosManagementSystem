@@ -51,21 +51,20 @@ namespace VideosManagementSystem.Pages.User
                 return RedirectToPage("/Index");
             }
             SingleUserData = userData.GetByUserName(Username);
-
-            var img = "";
+            writeBlog.Users = SingleUserData;
+;
             if (BlogPicture != null)
             {
                 writeBlog.BlogImage = UploadedPicture(BlogPicture,SingleUserData.UserName);
             }
             
-            if (ModelState.IsValid)
-            {
                 var newBlog = new Blogs(){
+                    Users = writeBlog.Users,
                     BlogTitle = writeBlog.BlogTitle,
                     BlogDescription = writeBlog.BlogDescription,
                     Blogcontent = writeBlog.Blogcontent,
                     BlogDate = DateTime.Now.Date,
-                    BlogImage = img
+                    BlogImage = writeBlog.BlogImage
                 };
 
                 bool res = blogData.AddBlog(newBlog);
@@ -75,8 +74,6 @@ namespace VideosManagementSystem.Pages.User
                     return RedirectToPage("/User/Dashboard", new { urlname = Username });
                 }
                 return Page();
-            }
-            return Page();
         }
 
         private string UploadedPicture(IFormFile BlogPicture, string username)

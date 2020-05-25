@@ -33,6 +33,7 @@ namespace VideosManagementSystem.Pages.User
         public IActionResult OnPost(int vId)
         {
             var Username = HttpContext.Session.GetString("username");
+            //var Username = "Sukriti275Saini";
             if (string.IsNullOrEmpty(Username))
             {
                 return RedirectToPage("/Index");
@@ -49,7 +50,7 @@ namespace VideosManagementSystem.Pages.User
             if (res)
             {
                 videoRecordData.Commit();
-                return RedirectToPage("/User/Dashboard", new { username = Username });
+                return Redirect("https://localhost:44334/User/Dashboard/"+ Username);
             }
             return Page();
         }

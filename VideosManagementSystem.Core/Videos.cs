@@ -23,11 +23,11 @@ namespace VideosManagementSystem.Core
         public string Language { get; set; }
 
         [Required(ErrorMessage = "Enter the name of the director")]
-        [StringLength(30, ErrorMessage = "Minimum length required is 3", MinimumLength = 3)]
+        [StringLength(50, ErrorMessage = "Minimum length required is 3", MinimumLength = 3)]
         public string Director { get; set; }
 
         [Required(ErrorMessage = "Enter the name of the actor")]
-        [StringLength(30, ErrorMessage = "Minimum length required is 3", MinimumLength = 3)]
+        [StringLength(80, ErrorMessage = "Minimum length required is 3", MinimumLength = 3)]
         public string Actor { get; set; }
 
         [Required(ErrorMessage = "Enter the description")]
@@ -39,7 +39,7 @@ namespace VideosManagementSystem.Core
         public int NoOfCopies { get; set; }
 
         [Required(ErrorMessage = "Enter the lease amount")]
-        [Range(20, 1500)]
+        [Range(20, 1200)]
         public int LeaseAmount { get; set; }
 
         public string VideoImage { get; set; }

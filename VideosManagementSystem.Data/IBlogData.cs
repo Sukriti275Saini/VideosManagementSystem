@@ -11,6 +11,8 @@ namespace VideosManagementSystem.Data
 
         public IEnumerable<Blogs> GetBlogByUsername(string username);
 
+        public Blogs GetBlogByUser(string username);
+
         public bool AddBlog(Blogs userBlog);
 
         public int Commit();

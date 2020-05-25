@@ -10,6 +10,8 @@ namespace VideosManagementSystem.Core
         [Key]
         public int ReviewId { get; set; }
 
+        public Users Users { get; set; }
+
         [Required]
         public Videos Videos { get; set; }
 

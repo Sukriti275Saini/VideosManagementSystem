@@ -28,7 +28,7 @@ namespace VideosManagementSystem
 
             services.AddDbContextPool<VMSDbContext>(options =>
             {
-                options.UseSqlServer(Configuration.GetConnectionString("VidzzLeaseDb"));
+                options.UseSqlServer(Configuration.GetConnectionString("VideosManagementSystemDb"));
             });
 
             services.AddDistributedMemoryCache();

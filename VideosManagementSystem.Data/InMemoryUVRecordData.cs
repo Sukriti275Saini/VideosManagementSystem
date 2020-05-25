@@ -11,6 +11,11 @@ namespace VideosManagementSystem.Data
     {
         private readonly VMSDbContext db;
 
+        public InMemoryUVRecordData(VMSDbContext db)
+        {
+            this.db = db;
+        }
+
         public IEnumerable<UsersVideoRecord> GetAllRecords()
         {
             var allrecords = from rec in db.Records.Include("Videos").Include("Users")
