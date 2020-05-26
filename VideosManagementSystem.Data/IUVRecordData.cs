@@ -13,6 +13,8 @@ namespace VideosManagementSystem.Data
 
         public UsersVideoRecord GetRecordById(int recordId);
 
+        public UsersVideoRecord GetByUsername(string username);
+
         bool AddVideoRecord(UsersVideoRecord newVideoRecord);
 
         bool DeleteVideoRecord(int recordId);

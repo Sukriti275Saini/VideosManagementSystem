@@ -32,6 +32,15 @@ namespace VideosManagementSystem.Pages
 
         public ILogger<IndexModel> Logger => _logger;
 
+        public IActionResult OnGet()
+        {
+            if (!string.IsNullOrEmpty(HttpContext.Session.GetString("username")))
+            {
+                return RedirectToPage("User/Dashboard", new { urlname = HttpContext.Session.GetString("username") });
+            }
+            return Page();
+        }
+
         public IActionResult OnPost()
         {
             if (ModelState.IsValid)

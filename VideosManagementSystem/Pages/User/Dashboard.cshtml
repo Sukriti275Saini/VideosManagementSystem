@@ -5,16 +5,117 @@
 }
 
 
+<div class=" container-fluid maindashboard">
     <div class="container">
-        <div class="maindashboard">
-            <h1>Dashboard</h1>
-            <a class="writeblog-btn btn-primary" role="button" asp-page="./WriteBlog" asp-route-urlname="@Model.getuser.UserName">Write a Blog</a>
+        <div class="dashboard-header">
+            <div class="row">
+                <div class="col-7 dashboard-head-left">
+                    <img class="img-thumbnail dashboard-img" src="/Images/users/@Model.getuser.ProfilePicture" alt="Alternate Text" />
+                    <h1 class="dashboard-heading">Dashboard</h1>
+                </div>
+                <div class="col-5 dashboard-head-right text-right">
+                    <form method="post">
+                        <button class="usr-logout" role="button"><i class="fas fa-sign-out-alt"></i>  Logout</button>
+                    </form>
+
+                    <a class="writeblog-btn" role="button" asp-page="./WriteBlog" asp-route-urlname="@Model.UserName"><i class="fas fa-pen-nib"></i>  Write a Blog</a>
+                    <a class="usr-setting-btn" role="button" asp-page="./UserSetting" asp-route-username="@Model.UserName"><i class="fas fa-user-cog"></i>  User Settings</a>
+
+                </div>
+            </div>
         </div>
 
-        @foreach (var blg in Model.getallblogs)
-        {
-            <div class="container">
-                Blog Name : @blg.BlogTitle
+        <div class="userdash-videos">
+            <div class="userdash-videos-heading">
+                <h4>Your have added the following videos to your account :</h4>
             </div>
-        }
+            @if (Model.userRecords != null)
+            {
+                @foreach (var rec in Model.userRecords)
+                {
+                    <div class="videos-dash-back">
+                        <div class="row">
+                            <div class="col-2">
+                                <img class="img-thumbnail dashvid-img" src="/Images/movies/@rec.Videos.VideoImage" alt="Alternate Text" />
+                            </div>
+                            <div class="col-10 dashvid-text">
+                                <div class="row">
+                                    <div class="col-2"><h6>Video Name :</h6></div>
+                                    <div class="col-10"><h6>@rec.Videos.VideoName</h6></div>
+
+                                    <div class="col-2"><h6>Issue Date :</h6></div>
+                                    <div class="col-10"><h6>@rec.IssueDate.Date.ToShortDateString()</h6></div>
+
+                                    <div class="col-2"><h6>Return Name :</h6></div>
+                                    <div class="col-10"><h6>@rec.ReturnDate.Date.ToShortDateString()</h6></div>
+                                </div>
+                                <div class="col-12">
+                                    <a asp-page="./ConfirmReturn" asp-route-rId="@rec.RecordId" class="btn dashvid-return float-right">Return Video</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                }
+            }
+            else
+            {
+                <div class="col-12">
+                    <div class="alert alert-danger">
+                        <h4>You don't have any videos yet......</h4>
+                    </div>
+                </div>
+            }
+        </div>
+
+
+        <div class="userdash-videos">
+            <div class="userdash-videos-heading">
+                <h4>Blogs written by you :</h4>
+            </div>
+            @if (Model.getallblogs != null)
+            {
+                @foreach (var blg in Model.getallblogs)
+                {
+                    <div class="videos-dash-back">
+                        <div class="row">
+                            <div class="col-4">
+                                <img class="dashblog-img" src="/Images/blogs/@blg.BlogImage" alt="Alternate Text" />
+                            </div>
+
+                            <div class="col-6 dashvid-text">
+                                <div class="row">
+                                    <div class="col-12"><h2>@blg.BlogTitle</h2></div>
+
+                                    <div class="col-12"><h4>@blg.BlogDescription</h4></div>
+
+                                    <div class="col-2"><h6>Posted On :</h6></div>
+                                    <div class="col-10"><h6>@blg.BlogDate.Date.ToShortDateString()</h6></div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 dashblog-content">
+                                <h6>@blg.Blogcontent</h6>
+                            </div>
+
+                            <div class="col-12">
+                                <a asp-page="./DeleteBlog" asp-route-blogId="@blg.BlogId" class="btn dashvid-return float-right">Delete Blog</a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                }
+            }
+            else
+            {
+                <div class="col-12">
+                    <div class="alert alert-danger">
+                        <h4>You don't have any videos yet......</h4>
+                    </div>
+                </div>
+            }
+        </div>
+
     </div>
+</div>

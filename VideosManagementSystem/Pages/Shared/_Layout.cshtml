@@ -13,7 +13,7 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">
+                <a class="navbar-brand" asp-area="" asp-page="#">
                     <img class="navlogo-img" src="~/Images/logoimg.png" alt="Logo" />
                     VidzzLease
                 </a>
@@ -23,19 +23,29 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link" asp-page="/Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-page="/User/AllBlogs">Blogs</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-page="/User/AllVideos">Videos</a>
-                        </li>
-                        @if(!string.IsNullOrEmpty(Context.Session.GetString("username")))
+
+                        @if (string.IsNullOrEmpty(Context.Session.GetString("username"))) 
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" asp-page="/Index">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-page="/User/AllBlogs">Blogs</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-page="/User/AllVideos">Videos</a>
+                            </li>
+                        }
+                        else
                         {
                             <li class="nav-item">
                                 <a class="nav-link" asp-page="User/Dashboard" asp-route-urlname="@Context.Session.GetString("username")">Dashboard</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-page="/User/AllBlogs">Blogs</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-page="/User/AllVideos">Videos</a>
                             </li>
                         }
                     </ul>
@@ -49,32 +59,44 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            <div class="row">
+    <footer>
+        <div class="container-fluid ask-for-fb">
+            <div class="container">
                 <div class="col-12">
-                    &copy; 2020 - A Video Leasing System
-                    <a class="navbar-brand footer-navbrand" asp-area="" asp-page="/Index">
-                        VidzzLease
-                    </a>
+                    <div class="row">
+                        <p>Help us by giving your valuable comments</p>
+                        <a asp-page="./Feedback">Enter a Feedback</a>
+                    </div>
                 </div>
-                <div class="col-6">
-                    Design and Concept By <span>"~Sukriti Saini~"</span>
-                </div>
-                <div class="col-6">
-                    Designation: Trainee-Developer (.NET)
-                </div>
-                <div class="col-6">
-                    College: Panjab University, Regional Center, Hoshiarpur.
-                </div>
-                <div class="col-6">
-                    Office: Net Solutions, IT Park, Chandigarh.
-                </div>
-                <div class="col-6">
-                    Contact: (+91)-88722-83355
-                </div>
-                <div class="col-6">
-                    Email: sukriti.saini.275@gmail.com
+            </div>
+        </div>
+        <div class="border-top footer text-muted">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        &copy; 2020 - A Video Leasing System
+                        <a class="navbar-brand footer-navbrand" asp-area="" asp-page="/Index">
+                            VidzzLease
+                        </a>
+                    </div>
+                    <div class="col-6">
+                        Design and Concept By <span>"~Sukriti Saini~"</span>
+                    </div>
+                    <div class="col-6">
+                        Designation: Trainee-Developer (.NET)
+                    </div>
+                    <div class="col-6">
+                        College: Panjab University, Regional Center, Hoshiarpur.
+                    </div>
+                    <div class="col-6">
+                        Office: Net Solutions, IT Park, Chandigarh.
+                    </div>
+                    <div class="col-6">
+                        Contact: (+91)-88722-83355
+                    </div>
+                    <div class="col-6">
+                        Email: sukriti.saini.275@gmail.com
+                    </div>
                 </div>
             </div>
         </div>

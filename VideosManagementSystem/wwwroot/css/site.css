@@ -261,7 +261,47 @@ body {
     font-size: 25px;
     font-weight: 500;
 }
-
+.homevid-div {
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    font-family: 'Chelsea Market', cursive;
+    background: url("/Images/homevidback.jpg");
+    width: 100%;
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 30px 15px;
+}
+.homevid-text{
+    align-self: center;
+    color: black;    
+}
+.homevid-text h2{
+    font-size: 40px;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px white;
+}
+.homevid-text h4{
+    font-size: 30px;
+    font-weight: 500;
+    text-shadow: 2px 2px 3px black;
+}
+.homevid-img{
+    width: 80%;
+    height: 250px;
+}
+.homeblogger-quote {
+    background: url("/Images/quote2-back.jpg");
+    padding: 20px 15px;
+    box-shadow: 0px -1px 4px black;
+}
+.homeblog-quote {
+    font-family: 'Indie Flower', cursive;
+    color: white;
+    font-weight: 900;
+    font-size: 40px;
+    letter-spacing: 1.5px;
+}
 
 /*SignUp Page Styling*/
 .signup-form{
@@ -358,12 +398,134 @@ body {
 
 /*Dashboard*/
 .maindashboard{
-    margin-top: 80px;
-    margin-bottom: 20px;
-} 
-.writeblog-btn{
-    padding: 5px 15px;
+    margin-top: 65px;
+    font-family: 'Comic Sans MS';
+    background: url("/Images/dashbackground.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    min-height: 500px;
+    background-position: center;
+    background-attachment: fixed;
+    padding-bottom: 30px;
 }
+.dashboard-header{
+    padding-top: 30px;
+}
+.dashboard-head-left{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+.dashboard-img{
+    max-height: 130px;
+    max-width: 90px;
+    padding: 0;
+    border: 3px solid white;
+    border-radius: 0;
+    box-shadow: 1px 1px 4px white;
+}
+.dashboard-heading{
+    color: white;
+    font-family: 'Comic Sans MS';
+    padding: 0 20px;
+    font-size: 45px;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px black;
+}
+.writeblog-btn {
+    background: black;
+    border: 1px solid white;
+    color: white;
+    border-radius: 5px;
+    font-weight: 500;
+    padding: 5px 10px;
+    font-family: 'Comic Sans MS';
+    box-shadow: 1px 1px 4px white;
+}
+.writeblog-btn:hover{
+    text-decoration: none;
+    color: #24821a;
+    box-shadow: none;
+}
+.usr-setting-btn{
+    background: black;
+    border: 1px solid white;
+    color: white;
+    border-radius: 5px;
+    font-weight: 500;
+    padding: 5px 10px;
+    font-family: 'Comic Sans MS';
+    box-shadow: 1px 1px 4px white;
+}
+.usr-setting-btn:hover{
+    color: #dfed64;
+    text-decoration: none;
+    box-shadow: none;
+}
+.usr-logout {
+    background: black;
+    border: 1px solid white;
+    color: white !important;
+    border-radius: 5px;
+    font-weight: 500;
+    padding: 5px 10px;
+    font-family: 'Comic Sans MS';
+    box-shadow: 1px 1px 4px white;
+    margin-bottom: 20px;
+}
+.usr-logout:hover {
+    color: #b20000 !important;
+    box-shadow: none;
+}
+.usr-logout i{
+    color: #b20000;
+}
+.userdash-videos{
+    margin-top: 30px;
+}
+.userdash-videos-heading{
+    color: white;
+    font-family: 'Comic Sans MS';
+}
+.videos-dash-back{
+    background: rgba(255, 255, 255, 0.45);
+    padding: 20px 15px;
+    font-family: 'Comic Sans MS';
+    color: black;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+.dashvid-img{
+    min-height: 105px;
+    max-height: 105px;
+    width: 80px;
+    padding: 0;
+}
+.dashvid-text{
+    align-self: center;
+}
+.dashvid-return{
+    border: 1px solid white;
+    background: black;
+    padding: 3px 5px;
+    color: white;
+    font-weight: 500;
+    font-size: 13px;
+    box-shadow: 2px 2px 4px black;
+}
+.dashvid-return:hover{
+    color: red;
+    box-shadow: none;
+}
+.dashblog-img{
+    width: 100%;
+    max-height: 450px;
+}
+.dashblog-content{
+    padding-top: 10px;
+}
+
 
 
 /*All videos*/
@@ -513,6 +675,9 @@ img.img-thumbnail.videomain-img {
     width: 100%;
     margin-top: 65px;
 }
+.card-columns {
+    column-count: 2;
+}
 .allblogs-heading{
     padding-top: 20px;
     color: white;
@@ -524,6 +689,12 @@ img.img-thumbnail.videomain-img {
     margin: 20px 0;
     border: 1px solid white;
     border-radius: 5px;
+    color: black;
+}
+.single-blog-card{
+    margin-bottom: 0px !important;
+    background: transparent;
+    border: none;
 }
 .blog-displayimg{
     max-height: 400px;
@@ -535,4 +706,109 @@ img.img-thumbnail.videomain-img {
 .blog-desc{
     padding-top: 5px;
     padding-bottom: 5px;
+}
+
+/*confirm delete page*/
+.confirm-page{
+    margin-top: 85px;
+    min-height: 374px;
+    font-family: 'Comic Sans MS';
+}
+.confirmdelete-text{
+    margin: 20px 0;
+    font-weight: 600;
+}
+.alert-danger h6{
+    font-weight: 600;
+}
+.confirm-buttons{
+    margin-top: 20px;
+}
+
+
+/*User Settings Page*/
+.usersettings-page{
+    margin-top: 65px;
+    font-family: 'Comic Sans MS';
+    background: url("/Images/profile-back.jpg");
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    padding-bottom: 25px;
+}
+.first-profile-div{
+    padding-top: 20px;
+}
+.profile-heading{
+    font-weight: 600;
+    padding: 20px 15px;
+    background: rgba(0, 0, 0, 0.60);
+    text-shadow: 2px 2px 4px black;
+    color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.profile-details{
+    margin-top: 25px;
+}
+.userdetails-img{
+    max-width: 200px;
+    max-height: 250px;
+}
+.usersettings-details{
+    background: rgba(255, 255, 255, 0.60);
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 20px 15px 20px 15px;
+}
+
+/*Feedback footer*/
+.ask-for-fb{
+    background: black;
+    padding: 20px 15px;
+    text-align: center;
+}
+.ask-for-fb p{
+    color: white;
+    font-family: 'Comic Sans MS';
+    margin: 0;
+    padding-right: 30px;
+}
+.ask-for-fb a {
+    border: 1px solid white;
+    padding: 3px 5px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.70);
+    color: black;
+    font-family: 'Comic Sans MS';
+    font-weight: 500;
+    box-shadow: 1px 1px 3px white;
+}
+.ask-for-fb a:hover{
+    text-decoration: none;
+    color: #cb0000;
+    box-shadow: none;
+}
+
+
+/*Feedback form*/
+.feed-back{
+    margin-top: 65px;
+    background: url("/Images/feedback.jpg");
+    background-repeat: no-repeat;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+.feed-back h1{
+    color: white;
+    font-family: 'Comic Sans MS';
+    padding: 20px 0;
+}
+.feedback-form{
+    background: rgba(255, 255, 255, 0.65);
+    padding: 20px 15px;
 }

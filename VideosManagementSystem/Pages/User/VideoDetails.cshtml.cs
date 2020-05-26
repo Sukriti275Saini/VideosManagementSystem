@@ -50,7 +50,7 @@ namespace VideosManagementSystem.Pages.User
             if (res)
             {
                 videoRecordData.Commit();
-                return Redirect("https://localhost:44334/User/Dashboard/"+ Username);
+                return RedirectToPage("Dashboard", new { urlname = Username });
             }
             return Page();
         }

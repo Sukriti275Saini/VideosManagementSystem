@@ -174,3 +174,11 @@ a {
     border: 1px solid black;
     font-weight: 600;
 }
+
+
+/*Records page*/
+.record-userimg{
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+}

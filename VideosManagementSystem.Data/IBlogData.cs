@@ -13,7 +13,11 @@ namespace VideosManagementSystem.Data
 
         public Blogs GetBlogByUser(string username);
 
+        public Blogs GetBlogById(int BlogId);
+
         public bool AddBlog(Blogs userBlog);
+
+        public bool DeleteBlog(int BlogId);
 
         public int Commit();
     }

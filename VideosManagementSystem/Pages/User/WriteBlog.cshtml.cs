@@ -31,10 +31,10 @@ namespace VideosManagementSystem.Pages.User
         public Users SingleUserData { get; set; }
         [BindProperty]
         public IFormFile BlogPicture { get; set; }
-        public IActionResult OnGet()
+        public IActionResult OnGet(string urlname)
         {
             var Username = HttpContext.Session.GetString("username");
-            if (string.IsNullOrEmpty(Username))
+            if (string.IsNullOrEmpty(Username) && Username != urlname)
             {
                 return RedirectToPage("/Index");
             }

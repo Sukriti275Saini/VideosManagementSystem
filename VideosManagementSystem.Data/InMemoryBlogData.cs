@@ -39,6 +39,14 @@ namespace VideosManagementSystem.Data
             return usrname;
         }
 
+        public Blogs GetBlogById(int BlogId)
+        {
+            var query = from r in db.Blog.Include("Users")
+                        where r.BlogId.Equals(BlogId)
+                        select r;
+            return query.FirstOrDefault();
+        }
+
         public bool AddBlog(Blogs userBlog)
         {
             db.Blog.Add(userBlog);
@@ -48,6 +56,12 @@ namespace VideosManagementSystem.Data
         public int Commit()
         {
             return db.SaveChanges();
+        }
+
+        public bool DeleteBlog(int BlogId)
+        {
+            db.Blog.Remove(GetBlogById(BlogId));
+            return true;
         }
 
     }

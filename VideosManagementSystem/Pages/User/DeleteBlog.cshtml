@@ -1,0 +1,30 @@
+﻿@page "{blogId:int}"
+@model VideosManagementSystem.Pages.User.DeleteBlogModel
+@{
+    ViewData["Title"] = "DeleteBlog";
+}
+
+<div class="container-fluid confirm-page">
+    <div class="container">
+        <h2 class="confirmdelete-text">Delete!</h2>
+
+        <div class="alert alert-danger">
+            <h6>Are you sure you want to delete the following blog?</h6>
+        </div>
+
+        <div class="col-12 usrdelete-details">
+            <div class="row">
+                <div class="col-3 label">Titled : </div>
+                <div class="col-9">@Model.deleteblog.BlogTitle</div>
+
+                <div class="col-12">
+                    <form method="post" class="confirm-buttons">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                        <a class="btn btn-light" asp-page="./Dashboard" asp-route-urlname="@Model.deleteblog.Users.UserName">Cancel</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
